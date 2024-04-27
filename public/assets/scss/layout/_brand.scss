@@ -1,0 +1,255 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  15. BRAND CSS START
+/*----------------------------------------*/
+
+.brand{
+    $self: &;
+    &__inner{
+        padding: 40px 0;
+        border-top: 1px solid var(--tp-border-1);
+    }
+    &__title{
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--tp-common-white);
+        font-family: var(--tp-ff-inter);
+        margin-right: 60px;
+        margin-bottom: 0;
+        display: inline-block;
+        flex: 0 0 auto;
+
+        @include rtl{
+            margin-right: 0;
+            margin-left: 60px;
+        }
+
+        @media #{$xs}{
+            margin-bottom: 15px;
+            margin-right: 0;
+
+            @include rtl{
+                margin-left: 0;
+            }
+        }
+    }
+    &__thumb{
+        text-align: center;
+        & img{
+            opacity: .5;
+        }
+
+        &:hover{
+            & img{
+                opacity: 1;
+            }
+        }
+    }
+    &__item{
+        &-2{
+            text-align: center;
+
+            & img{
+                opacity: .6;
+            }
+
+            &:hover{
+                & img{
+                    opacity: 1;
+                }
+            }
+        }
+        &-3{
+            position: relative;
+            padding: 60px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: -1px 0 0 -1px;
+            @extend %tp-transition;
+            height: 150px;
+            z-index: 1;
+
+            &::after{
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.04);
+                backdrop-filter: blur(10px);
+                visibility: hidden;
+                opacity: 0;
+                z-index: -1;
+                @extend %tp-transition;
+
+                @include rtl{
+                    left: auto;
+                    right: 0;
+                }
+            }
+            &:hover{       
+                &::after{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            &:hover{
+                #{$self}{
+                    &__tooltip{
+                        visibility: visible;
+                        opacity: 1;
+                        @include transform(translate(-50%, -50%));
+                    }
+                }
+            }
+        }
+
+        &-5{
+            width: 260px !important;
+            height: 160px;
+            border: 1px solid #04121F1A;
+            text-align: center;
+            line-height: 160px;
+            border-radius: 14px;
+            @extend %tp-transition;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+
+            &:hover{
+                background: #F8F8F8;
+            }
+        }
+
+        &-6{
+            text-align: center;
+            margin-bottom: 50px;
+
+            @media #{$xs}{
+                width: 100%;
+                text-align: center;
+            }
+            @media #{$xsx}{
+                width: 50%;
+            }
+
+            
+            & img{
+                opacity: .5;
+            }
+
+            &:hover{
+                & img{
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-7{
+            & img{
+                opacity: .5;
+            }
+
+            &:hover{
+                & img{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &__tooltip{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        @include transform(translate(-50%, -20%));
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--tp-common-white);
+        font-family: var(--tp-ff-space);
+        background-color: var(--tp-theme-3);
+        padding: 9px 20px;
+        min-width: 160px;
+        transition-duration: .3s;
+        visibility: hidden;
+        opacity: 0;
+        &::after{
+            position: absolute;
+            content: '';
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid var(--tp-theme-3);
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            @include transform(translateX(-50%));
+        }
+    }
+    &__slider{
+        &-7{
+            & span{
+                font-weight: 600;
+                font-size: 14px;
+                letter-spacing: -0.02em;
+                text-transform: uppercase;
+                display: inline-block;
+
+                @media #{$md, $sm, $xs}{
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        &-5,
+        &-5-1{
+            .swiper-wrapper{
+                -webkit-transition-timing-function:linear !important; 
+                -o-transition-timing-function:linear !important;          
+                transition-timing-function:linear !important;                 
+            }
+
+            & .slick-list{
+                margin: 0 6px;
+            }
+
+            & .slick-slide{
+                margin: 0 6px;
+            }
+        }
+    }
+    &__info{
+        & p{
+            font-family: var(--tp-ff-space);
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: -0.04em;
+            color: #525258;
+            margin-bottom: 50px;
+            & span{
+                color: var(--tp-theme-5);
+            }
+        }
+
+        &-2{
+            & p{
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 24px;
+                color: var(--tp-common-black-9);
+                font-family: var(--tp-ff-roboto);
+
+                & span{
+                    color: var(--tp-theme-6);
+                }
+            }
+        }
+    }
+    &__style-square{
+        & #{$self}{
+            &__item-5{
+                border-radius: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,247 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  23. VIDEO CSS START
+/*----------------------------------------*/
+
+.video{
+    &__content{
+        padding: 0 40px;
+        position: relative;
+        z-index: 1;
+
+        @media #{$md, $sm, $xs}{
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &-2{
+            padding: 0 35px;
+            @media #{$xl}{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            @media #{$lg, $md, $sm, $xs}{
+                padding-left: 0;
+                padding-right: 0;
+            }
+            & > span{
+                font-family: var(--tp-ff-space);
+                font-weight: 500;
+                font-size: 14px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: var(--tp-common-white);
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+        }
+
+        &-8{
+            position: relative;
+            z-index: 1;
+            padding-left: 110px;
+            padding-right: 110px;
+
+            @media #{$xxl}{
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+
+            @media #{$xl}{
+                padding-left: 80px;
+                padding-right: 80px;
+            }
+
+            @media #{$lg}{
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+
+            @media #{$sm}{
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+
+            @media #{$xs}{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    }
+    &__title{
+        font-size: 60px;
+        color: var(--tp-common-white);
+        font-family: var(--tp-ff-space);
+        line-height: 1;
+        margin-bottom: 50px;
+
+        @media #{$sm}{
+            font-size: 50px;
+        }
+
+        @media #{$xs}{
+            font-size: 30px;
+        }
+
+        &-2{
+            font-size: 50px;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            color: var(--tp-common-white);
+
+            @media #{$xs}{
+                font-size: 30px;
+            }
+        }
+
+
+    }
+    &__play{
+        margin-bottom: 15px;
+        &-2{
+            margin-bottom: 42px;
+        }
+        &-btn{
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+            background-color: transparent;
+            
+            .video-play-bg{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                @include tp-gradient((45deg, #C6471A 15%, #FFAD91 85.5%));
+                border-radius: 50%;
+                @extend %tp-transition;
+                box-shadow: 0px 2px 2px rgba(136, 39, 6, 0.3);
+   
+            }
+
+
+            & img{
+                position: absolute;
+                top: 53%;
+                left: 53%;
+                @include transform(translate(-50%, -50%));
+            }
+
+            &:hover{
+                & .video-play-bg{
+                    @include transform(scale(1.1));
+                }
+            }
+
+            &-8{
+                position: relative;
+
+                .video-play-bg{
+                    
+                    box-shadow: 0px 2px 2px rgba(136, 39, 6, 0.3);
+       
+                }
+            }
+
+            &-2{
+                width: 84px;
+                height: 84px;
+                line-height: 84px;
+                text-align: center;
+                color: var(--tp-theme-1);
+                box-shadow: 0px 0px 50px rgba(3, 4, 28, 0.1);
+                border-radius: 50%;
+                & svg{
+                    @include transform(translate(4px, -2px));
+                }
+
+                & .video-play-bg{
+                    @include tp-gradient((164.71deg, #FFFFFF 8.83%, #EAEAEF 128.86%));
+                }
+
+                &:hover{
+                    color: var(--tp-theme-1);
+                }
+            }
+        }
+    }
+    &__inner{
+        &-8{
+            position: relative;
+            box-shadow: 0px 50px 60px rgba(12, 15, 33, 0.9);
+            &::after{
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: #0C0F21, $alpha: .4);
+            }
+        }
+    }
+    &__overlay{
+        position: relative;
+        z-index: 1;
+        &::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 50%;
+            background-color: var(--tp-common-black-12);
+            z-index: -1;
+        }
+    }
+    &__bg{
+        @include tp-gradient((173.39deg, #6364DB -16.2%, #4D4ECC 101.3%));
+
+        &-shape{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            mix-blend-mode: luminosity;
+            z-index: -1;
+        }
+    }
+    &__pt-183{
+        padding-top: 183px;
+    }
+    &__pb-223{
+        padding-bottom: 223px;
+
+        @media #{$xs}{
+            padding-bottom: 160px;
+        }
+    }
+    &__shape{
+        &-1{
+            position: absolute;
+            top: 16%;
+            left: 15%;
+            z-index: -1;
+            -moz-animation: tptranslateX 3s ease-in-out 1s forwards infinite alternate;
+            -webkit-animation: tptranslateX 3s ease-in-out 1s forwards infinite alternate;
+            animation: tptranslateX 3s ease-in-out 1s forwards infinite alternate;
+        }
+        &-2{
+            position: absolute;
+            bottom: 28%;
+            right: 8%;
+            z-index: -1;
+            -moz-animation: tptranslateY2 3s ease-in-out 1s forwards infinite alternate;
+            -webkit-animation: tptranslateY2 3s ease-in-out 1s forwards infinite alternate;
+            animation: tptranslateY2 3s ease-in-out 1s forwards infinite alternate;
+        }
+    }
+}

@@ -1,0 +1,147 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  40. ARTICLE CSS START
+/*----------------------------------------*/
+
+.articles{
+    $self :&;
+    &__item{
+        padding: 35px 40px;
+        min-height: 450px;
+
+        @media #{$lg}{
+            padding: 25px 25px;
+        }
+
+        @media #{$md}{
+            padding: 20px;
+        }
+
+        @media #{$xs}{
+            padding: 30px 20px;
+        }
+        &-sm{
+            min-height: 290px;
+        }
+    }
+    &__thumb{
+        & img{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            mix-blend-mode: overlay;
+            z-index: -1;
+
+            @include rtl{
+                right: auto;
+                left: 0;
+            }
+            &.has-opacity-6{
+                opacity: .6;
+            }
+        }
+    }
+    &__title{
+        font-size: 30px;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        color: var(--tp-common-white);
+        margin-bottom: 15px;
+        margin-right: 10px;
+
+        @include rtl{
+            margin-right: 0;
+            margin-left: 10px;
+        }
+    }
+    &__number{
+        margin-bottom: 15px;
+        display: inline-block;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 1;
+        color: rgba($color: #fff, $alpha: .7);
+        background-color: #3F40B7;
+        padding: 5px 12px;
+    }
+    &__content{
+        & p{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.43;
+            color: rgba($color: #fff, $alpha: .9);
+        }
+    }
+    &__icon{
+        position: absolute;
+        right: 40px;
+        top: 50%;
+        @include transform(translateY(-50%));
+        @include rtl{
+            right: auto;
+            left: 40px;
+        }
+        
+        @media #{$xs}{
+            right: 20px;
+            @include rtl{
+                right: auto;
+                left: 20px;
+            }
+        }
+        & span{
+            font-size: 50px;
+            color: var(--tp-common-khaki-4);
+            & svg{
+                @include transform(translateY(-2px));
+            }
+            @media #{$md}{
+                opacity: .4;
+            }
+        }
+    }
+    &__style-2{
+        min-height: 130px;
+        padding-right: 90px;
+
+        @include rtl{
+            padding-right: 0;
+            padding-left: 90px;
+        }
+
+        @media #{$md}{
+            padding: 20px;
+            padding-right: 35px;
+
+            @include rtl{
+                padding-right: 0;
+                padding-left: 35px;
+            }
+        }
+
+        @media #{$xs}{
+            padding-right: 15px;
+            @include rtl{
+                padding-right: 0;
+                padding-left: 15px;
+            }
+        }
+        & #{$self}{
+            &__title{
+                color: var(--tp-common-black);
+            }
+            &__number{
+                background-color: var(--tp-common-khaki-3);
+                color: var(--tp-text-1);
+            }
+            &__content{
+                & p{
+                    color: rgba($color: #525258, $alpha: .9);
+                    margin-bottom: -4px;
+                }
+            }
+        }
+    }
+}

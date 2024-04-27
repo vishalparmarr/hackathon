@@ -1,0 +1,286 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  20. REVIEW CSS START
+/*----------------------------------------*/
+
+.review{
+    &__inner{
+        position: relative;
+        z-index: 1;
+        margin-left: 260px;
+        margin-right: 260px;
+        background: rgba(255, 255, 255, 0.06);
+
+        @media #{$xxxxl}{
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+        @media #{$xxxl}{
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        @media #{$xxl}{
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+
+        @media #{$xl}{
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        @media #{$lg}{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        @media #{$md}{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        @media #{$sm, $xs}{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+    &__person{
+        & ul{
+            display: flex;
+            align-items: center;
+            & li{
+                list-style: none;
+                margin-left: -15px;
+
+                @include rtl{
+                    margin-left: 0;
+                    margin-right: -15px;
+                }
+
+                &:first-child{
+                    margin-left: 0;
+
+                    @include rtl{
+                        margin-right: 0;
+                    }
+                }
+                & span{
+                    display: inline-block;
+                    width: 50px;
+                    height: 50px;
+                    line-height: 42px;
+                    font-size: 16px;
+                    font-weight: 700;
+                    text-align: center;
+                    font-family: var(--tp-ff-space);
+                    color: var(--tp-common-white);
+                    & img{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        border: 4px solid var(--tp-common-black-6);
+
+                    }
+                }
+                &:last-child{
+                    & span{
+                        border: 4px solid var(--tp-common-black-6);
+                        @include tp-gradient((47.17deg, #F06FF3 9.62%, #31A8FF 89.45%));
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+        & p{
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--tp-common-white);
+            opacity: .6;
+            font-family: var(--tp-ff-inter);
+            text-transform: uppercase;
+            margin-bottom: 0;
+            line-height: 1.5;
+            margin-left: 5px;
+
+            @include rtl{
+                margin-left: 0;
+                margin-right: 5px;
+            }
+        }
+    }
+    &__skill{
+        @media #{$xs}{
+            margin-top: 30px;
+        }
+        &-score{
+            text-align: right;
+            & p{
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--tp-common-white);
+                margin-bottom: 15px;
+                font-family: var(--tp-ff-space);
+                line-height: 1;
+                & span{
+                    font-size: 100px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &-item{
+            padding: 22px 30px;
+            @include tp-gradient((87.58deg, #F87171 0.25%, #FACC15 42.09%, #4ADE80 63.34%, #38BDF8 97.01%));
+            -moz-animation: reviewbg 3s ease-in-out 1s forwards infinite alternate;
+            -webkit-animation: reviewbg 3s ease-in-out 1s forwards infinite alternate;
+            animation: reviewbg 3s ease-in-out 1s forwards infinite alternate;
+            background-size: 150% 150%;
+            & p{
+                margin-bottom: 0;
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--tp-common-white);
+                font-family: var(--tp-ff-inter);
+            }
+
+            &-sm{
+                @media #{$xs}{
+                    margin-left: 0;
+                    margin-bottom: 15px;
+
+                    @include rtl{
+                        margin-right: 0;
+                    }
+                }
+                & p{
+                    font-size: 15px;
+                    font-weight: 600;
+                    font-family: var(--tp-ff-inter);
+                    color: var(--tp-common-white);
+                    margin-bottom: 0;
+                    margin-right: 15px;
+
+                    @include rtl{
+                        margin-right: 0;
+                        margin-left: 15px;
+                    }
+                }
+
+                &-bar{
+                    @include tp-gradient((87.58deg, #F87171 0.25%, #FACC15 42.09%, #4ADE80 63.34%, #38BDF8 97.01%));
+                    height: 20px;
+                    width: 220px;
+                    -moz-animation: reviewbg 3s ease-in-out 1s forwards infinite alternate;
+                    -webkit-animation: reviewbg 3s ease-in-out 1s forwards infinite alternate;
+                    animation: reviewbg 3s ease-in-out 1s forwards infinite alternate;
+                    background-size: 150% 150%;
+                }
+            }
+
+            &-xs{
+                @media #{$xs}{
+                    margin-left: 0;
+
+                    @include rtl{
+                        margin-right: 0;
+                    }
+                }
+                & p{
+                    font-size: 15px;
+                    font-weight: 600;
+                    font-family: var(--tp-ff-inter);
+                    color: var(--tp-common-white);
+                    margin-bottom: 0;
+                    margin-right: 15px;
+                    opacity: .5;
+
+                    @include rtl{
+                        margin-right: 0;
+                        margin-left: 15px;
+                    }
+                }
+
+                &-bar{
+                    border-radius: 2px;
+                    width: 130px;
+                    height: 20px;
+                    background-color: var(--tp-common-white);
+                    opacity: .2;
+                }
+            }
+        }
+
+    }
+    &__shape{
+        &-1{
+            position: absolute;
+            z-index: -1;
+            top: -11%;
+            left: 6%;
+            -moz-animation: tprotate 7s ease-in-out 1s forwards infinite alternate;
+            -webkit-animation: tprotate 7s ease-in-out 1s forwards infinite alternate;
+            animation: tprotate 7s ease-in-out 1s forwards infinite alternate;
+        }
+        &-2{
+            position: absolute;
+            z-index: -1;
+            top: 12%;
+            right: -2%;
+
+            -moz-animation: tptranslateY2 5s ease-in-out 1s forwards infinite alternate;
+            -webkit-animation: tptranslateY2 5s ease-in-out 1s forwards infinite alternate;
+            animation: tptranslateY2 5s ease-in-out 1s forwards infinite alternate;
+
+            @media #{$xl, $lg, $md, $sm, $xs}{
+                right: 0;
+            }
+        }
+
+        &-3{
+            position: absolute;
+            z-index: -1;
+            top: 18%;
+            right: 3%;
+            -moz-animation: tptranslateY2 4s ease-in-out 1s forwards infinite alternate;
+            -webkit-animation: tptranslateY2 4s ease-in-out 1s forwards infinite alternate;
+            animation: tptranslateY2 4s ease-in-out 1s forwards infinite alternate;
+        }
+        &-4{
+            position: absolute;
+            z-index: -1;
+            bottom: -3%;
+            right: 30%;
+        }
+        &-5{
+            position: absolute;
+            z-index: -1;
+            top: 31%;
+            right: 40%;
+        }
+        &-6{
+            position: absolute;
+            z-index: -1;
+            top: 10%;
+            left: 14%;
+        }
+        &-7{
+            position: absolute;
+            z-index: -1;
+            top: -5%;
+            left: 6%;
+            @media #{$xl, $lg, $md, $sm, $xs}{
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+// slider title pre 3 gradint animation
+@include keyframes(reviewbg){
+	0% {background-position: 0%}
+    100% {background-position: 100%}
+}

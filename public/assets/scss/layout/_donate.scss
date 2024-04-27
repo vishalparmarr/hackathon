@@ -1,0 +1,124 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  29. DONATE CSS START
+/*----------------------------------------*/
+
+
+.donate{
+    &__inner{
+        padding: 90px 180px 100px;
+        border-radius: 20px;
+
+        @media #{$xl}{
+            padding: 90px 150px 100px;
+        }
+
+        @media #{$lg, $md, $sm}{
+            padding: 90px 30px 100px;
+        }
+
+        @media #{$xs}{
+            padding: 90px 20px 100px;
+        }
+    }
+    &__title{
+        font-size: 50px;
+        letter-spacing: -0.04em;
+        line-height: 1.08;
+
+        @media #{$xs}{
+            font-size: 35px;
+        }
+    }
+    &__content{
+        & > p{
+            font-family: var(--tp-ff-space);
+            font-size: 16px;
+            line-height: 20px;
+            color: #84848B;
+
+        }
+    }
+
+    &__ammount{
+        margin-right: 16px;
+        margin-bottom: 10px;
+
+        @include rtl{
+            margin-right: 0;
+            margin-left: 16px;
+        }
+
+        @media #{$md}{
+            margin-right: 10px;
+            
+            @include rtl{
+                margin-right: 0;
+                margin-left: 10px;
+            }
+        }
+        &:last-child{
+            margin-right: 0;
+            @include rtl{
+                margin-left: 0;
+            }
+        }
+        &-wrapper{
+            @include rtl{
+                margin-right: 0;
+                margin-left: 20px;
+            }
+        }
+        & button,
+        & input{
+            display: inline-block;
+            width: 90px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            background: var(--tp-common-white);
+            border: 0;
+            outline: 0;
+            box-shadow: 0px 1px 3px rgba(3, 4, 28, 0.1);
+            border-radius: 6px;
+            font-size: 18px;
+            font-family: var(--tp-ff-space);
+            padding: 0 15px;
+
+            &:hover{
+                box-shadow: 0px 30px 40px rgba(3, 4, 28, 0.1);
+            }
+        }
+
+        & input{
+            @include tp-placeholder{
+                font-family: var(--tp-ff-space);
+                font-size: 16px;
+                color: #525258;
+            }
+        }
+
+        &-more{
+            & button,
+            & input{
+                width: 110px;
+
+                &:hover{
+                    box-shadow: 0px 30px 40px rgba(3, 4, 28, 0.1);
+                }
+            }
+        }
+
+    }
+    &__more{
+        & .tp-btn-7{
+            padding: 16px 31px 18px;
+            box-shadow: none;
+            @extend %tp-transition;
+            &:hover{
+                box-shadow: 0px 4px 10px rgba(150, 21, 35, 0.3);
+            }
+        }
+    }
+}

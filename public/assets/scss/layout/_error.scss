@@ -1,0 +1,255 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  36. ERROR CSS START
+/*----------------------------------------*/
+
+.error{
+    &__title{
+        font-size: 50px;
+        letter-spacing: -0.04em;
+
+        @media #{$xs}{
+            font-size: 30px;
+        }
+    }
+    &__content{
+        & p{
+            font-size: 16px;
+            line-height: 1.6;
+            padding: 0 70px;
+            margin-bottom: 27px;
+
+            @media #{$xs}{
+               padding: 0;
+            }
+        }
+
+        & .tp-btn{
+            padding: 12px 26px;
+
+
+            &:hover{
+                background-color: var(--tp-common-black)
+            }
+        }
+    }
+    &__bg{
+        @include tp-gradient((180deg, #F0F0F5 0%, rgba(240, 240, 245, 0) 82.84%));
+    }
+    &__thumb{
+        & svg,
+        & svg path{
+            @extend %tp-transition;
+        }
+        & svg{
+            @media #{$xs}{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    &__hair{
+        transform-origin: top center;
+        animation: one 3s cubic-bezier(0.65, 0, 0.35, 1) 0s infinite forwards;
+    }
+    &__z{
+        animation: note-anim 2s 4.5s infinite linear;
+        animation-fill-mode: forwards;
+        -webkit-animation: note-anim 2s 4.5s infinite linear;
+        -webkit-animation-fill-mode: forwards;
+
+        &.z-2{
+            animation: note-anim 2s 4s infinite linear;
+            animation-fill-mode: forwards;
+            -webkit-animation: note-anim 2s 4s infinite linear;
+            -webkit-animation-fill-mode: forwards;
+        }
+
+        &.z-3{
+            animation: note-anim 2s 3.5s infinite linear;
+            animation-fill-mode: forwards;
+            -webkit-animation: note-anim 2s 3.5s infinite linear;
+            -webkit-animation-fill-mode: forwards;
+        }
+    }
+
+    &__leaves{
+        animation: skew 3s infinite;
+        transform: skew;
+        animation-direction: alternate;
+        transform-origin: bottom center;
+
+        &-2{
+            animation: skew-2 3s infinite;
+            transform: skew-2;
+            animation-direction: alternate;
+            transform-origin: bottom center;
+        }
+
+        &-3{
+            animation: skew-3 3s infinite;
+            transform: skew-3;
+            animation-direction: alternate;
+            transform-origin: bottom center;
+        }
+
+        &-line{
+            animation: skew 3s infinite;
+            transform: skew;
+            animation-direction: alternate;
+            transform-origin: bottom center;
+
+            &-2{
+                animation: skew-2 3s infinite;
+                transform: skew-2;
+                animation-direction: alternate;
+                transform-origin: bottom center;
+            }
+
+            &-3{
+                animation: skew-3 3s infinite;
+                transform: skew-3;
+                animation-direction: alternate;
+                transform-origin: bottom center;
+            }
+        }
+    }
+
+    &__sm{
+        &-leaves{
+            animation: skew 3s infinite;
+            transform: skew;
+            animation-direction: alternate;
+            transform-origin: bottom center;
+
+            &-2{
+                animation: skew-2 3s infinite;
+                transform: skew-2;
+                animation-direction: alternate;
+                transform-origin: bottom center;
+            }
+    
+            &-3{
+                animation: skew-3 3s infinite;
+                transform: skew-3;
+                animation-direction: alternate;
+                transform-origin: bottom center;
+            }
+
+            &-line{
+                animation: skew 3s infinite;
+                transform: skew;
+                animation-direction: alternate;
+                transform-origin: bottom center;
+    
+                &-2{
+                    animation: skew-2 3s infinite;
+                    transform: skew-2;
+                    animation-direction: alternate;
+                    transform-origin: bottom center;
+                }
+    
+                &-3{
+                    animation: skew-3 3s infinite;
+                    transform: skew-3;
+                    animation-direction: alternate;
+                    transform-origin: bottom center;
+                }
+            }
+        }
+    }
+    &__text{
+        font-size: 440px;
+        color: var(--tp-common-white);
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-family: var(--tp-ff-inter);
+        font-weight: 600;
+        @include transform(translate(-150px, 0));
+        z-index: -1;
+
+        @include rtl{
+            left: auto;
+            right: 0;
+            @include transform(translate(150px, 0));
+        }
+
+        @media #{$md}{
+            @include transform(translate(-98px, 0));
+            font-size: 385px;
+            @include rtl{
+                @include transform(translate(98px, 0));
+            }
+        }
+
+        @media #{$sm}{
+            @include transform(translate(0px, 60px));
+            font-size: 268px;
+
+            @include rtl{
+                @include transform(translate(0px, -60px));
+            }
+        }
+
+        @media #{$xs}{
+            @include transform(translate(0, 0));
+            font-size: 150px;
+        }
+    }
+}
+
+
+@keyframes one {
+    0%,
+    100% {
+      @include transform(rotate(7deg) translateY(23px) translateX(33px));
+    }
+    30%,
+    60% {
+      @include transform(rotate(0) translateY(0) translateX(0));
+    }
+  }
+
+
+
+@keyframes note-anim{
+    0% {
+        @include transform( translate(0,0) translateZ(0));
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0 ;
+        @include transform( translate(-10px,0) translateZ(0));
+    }
+}
+
+
+@keyframes skew {
+	0% {
+		transform: skewX(5deg) translate(-7px);
+	}
+	100% {
+		transform: skewX(-5deg) translate(7px);
+	}
+}
+
+@keyframes skew-2 {
+	0% {
+		transform: skewX(-10deg) translate(7px);
+	}
+	100% {
+		transform: skewX(10deg) translate(-7px);
+	}
+}
+
+@keyframes skew-3 {
+	0% {
+		transform: skewX(-2deg) translate(4px);
+	}
+	100% {
+		transform: skewX(2deg) translate(-4px);
+	}
+}

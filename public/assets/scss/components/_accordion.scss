@@ -1,0 +1,83 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  ACCORDION CSS START
+/*----------------------------------------*/
+
+.tp-accordion{
+    
+    & .accordion-item{
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid rgba($color: #fff, $alpha: .12);
+        &:first-of-type{
+            & .accordion-button{
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        }
+        &:last-of-type{
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+
+            & .accordion-button{
+                &.collapsed{
+                    border-bottom-right-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+        }
+    }
+
+    & .accordion-button {
+        padding: 30px 0;
+        padding-right: 15px;
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--tp-common-white);
+        background-color: transparent;
+
+        &::after{
+            position: absolute;
+            content: '\f107';
+            font-family: var(--tp-ff-fontawesome);
+            background-image: none;
+            top: 28%;
+            right: 0;
+            @include transform(rotate(180deg));
+            color: var(--tp-theme-1);
+            width: auto;
+            height: auto;
+            font-weight: 500;
+            @extend %tp-transition;
+        }
+        &.collapsed{ 
+            &::after{
+                @include transform(rotate(0deg));
+                color:  var(--tp-common-white);
+            }
+        }
+        &:not(.collapsed){
+            color: var(--tp-theme-1);
+            background-color: transparent;
+            box-shadow: none
+        }
+        &:focus{
+            box-shadow: none;
+        }
+        &:hover{
+            color: var(--tp-theme-1);
+            &::after{
+                color: var(--tp-theme-1);
+            }
+        }
+    }
+
+    & .accordion-body{
+        padding: 0 0 25px;
+        & p{
+            font-size: 16px;
+            color: var(--tp-text-1);
+        }
+    }
+}

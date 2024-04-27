@@ -1,0 +1,1 @@
+sass --watch D:\Dropbox\Shahnewaz\harry\harry-prv\harry\assets\scss\main.scss:D:\Dropbox\Shahnewaz\harry\harry-prv\harry\assets\css\main.css

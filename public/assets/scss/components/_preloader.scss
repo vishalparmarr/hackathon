@@ -1,0 +1,197 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  PRELOADER CSS START
+/*----------------------------------------*/
+
+#loading{
+	background-color: #fff;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 999999;
+	margin-top: 0px;
+	top: 0px;
+}
+#loading-center{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	}
+#loading-center-absolute {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+}
+
+
+#loading{
+	background-color: #fff;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 999999;
+	margin-top: 0px;
+	top: 0px;
+}
+#loading-center{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	}
+#loading-center-absolute {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+
+}
+
+
+
+
+
+.preloader{
+	&__bar{
+		width: 270px;
+		height: 4px;
+		background-color: #E2E2E8;
+		margin: auto;
+		margin-bottom: 50px;
+		position: relative;
+		overflow: hidden;
+		&-inner{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 0%;
+			height: 100%;
+			@include tp-gradient((90deg, #F50963 0%, #6A6BFF 100%));
+			@include transition(1s);
+		}
+	}
+	&__logo{
+		margin-bottom: 40px;
+
+		& img{
+			&.logo-blink{
+				animation: tp-blink .7s ease-in-out .1s infinite;
+
+				@include keyframes(tp-blink){
+					0%{
+						opacity: 1;
+					}
+					50%{
+						opacity: .5;
+					}
+					100%{
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+	&__title{
+		font-size: 170px;
+		line-height: 1;
+		text-transform: uppercase;
+		position: relative;
+		color: var(--tp-common-black);
+
+		@media #{$sm}{
+			font-size: 140px;
+		}
+
+		@media #{$xs}{
+			font-size: 70px;
+		}
+
+		&-2{
+			font-size: 170px;
+			line-height: 1;
+			font-weight: 700;
+			text-transform: uppercase;
+			position: relative;
+			color: var(--tp-grey-1);
+			&::before{
+				position: absolute;
+				content: attr(data-text-preloader);
+				top: 22px;
+				left: 0;
+				color: var(--tp-common-black);
+				opacity: 0;  
+				-webkit-transform: rotateY(-90deg);
+				transform: rotateY(-90deg);
+				-webkit-animation: letters-loading 3s infinite;
+				animation: letters-loading 3s infinite;
+			}
+	
+			&:nth-child(2)::before{
+				-webkit-animation-delay: 0.2s;
+				animation-delay: 0.2s;
+			}
+			&:nth-child(3)::before{
+				-webkit-animation-delay: 0.4s;
+				animation-delay: 0.4s;
+			}
+			&:nth-child(4)::before{
+				-webkit-animation-delay: 0.6s;
+				animation-delay: 0.6s;
+			}
+			&:nth-child(5)::before{
+				-webkit-animation-delay: 0.8s;
+				animation-delay: 0.8s;
+			}
+			&:nth-child(6)::before{
+				-webkit-animation-delay: 1s;
+				animation-delay: 1s;
+			}
+
+		}
+	}
+	&__loading{
+		font-family: var(--tp-ff-space);
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 1;
+		letter-spacing: 0.9em;
+		text-transform: uppercase;
+		color: var(--tp-common-black);
+	}
+	&__with-text{
+		display: none;
+	}
+}
+
+  @include keyframes(letters-loading){
+		0%,
+		75%,	
+		100% {
+			opacity: 0;
+			@include transform(rotateY(-90deg));
+	
+		}
+	
+		25%,
+		50% {
+			opacity: 1;
+			@include transform(rotateY(0deg));
+		}
+  }  
+  
+  @keyframes loading {
+
+	0% {
+	  width: 0%;
+	}
+  
+	100% {
+	  width: 100%;
+	}
+  
+  }

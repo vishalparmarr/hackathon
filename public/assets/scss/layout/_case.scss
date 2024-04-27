@@ -1,0 +1,91 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  22. CASE CSS START
+/*----------------------------------------*/
+
+.case{
+    $self:&;
+    &__item{
+
+    }
+    &__price{
+        & span{
+            display: inline-block;
+            font-weight: 700;
+            color: var(--tp-theme-4);
+            font-size: 20px;
+            margin-bottom: 2px;
+            position: relative;
+            padding-left: 14px;
+            font-family: var(--tp-ff-space);
+
+            @include rtl{
+                padding-left: 0;
+                padding-right: 14px;
+            }
+            &::after{
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 50%;
+                width: 6px;
+                height: 6px;
+                background-color: var(--tp-theme-4);
+                @include transform(translateY(-50%));
+                border-radius: 50%;
+
+                @include rtl{
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+    &__title{
+        font-weight: 700;
+        font-size: 26px;
+        letter-spacing: -0.02em;
+
+        & a{
+            &:hover{
+                color: var(--tp-theme-4);
+            }
+        }
+    }
+    &__content{
+        background-color: var(--tp-common-white);
+        padding: 35px 40px 40px;
+        padding-right: 50px;
+        margin-right: 50px;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0px 14px 30px rgba(3, 4, 28, 0.08);
+        @include transform(translateY(-60px));
+
+        @include rtl{
+            margin-right: 0;
+            margin-left: 50px;
+        }
+
+        @media #{$xs}{
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-right: 0;
+
+            @include rtl{
+                margin-left: 0;
+            }
+        }
+        & p{
+            font-family: var(--tp-ff-inter);
+            line-height: 20px;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        &:hover{
+            @include transform(translateY(-80px));
+        }
+    }
+}

@@ -1,0 +1,13 @@
+
+.back-to-top-wrapper {
+  position: fixed;
+  right: 50px;
+  bottom: 0;
+  height: 44px;
+  width: 44px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50%;
+  z-index: 99;
+}
+

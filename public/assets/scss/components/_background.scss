@@ -1,0 +1,315 @@
+@use '../utils' as *;
+
+/*--
+    - Background color
+-----------------------------------------*/
+.grey-bg {
+	background-color: var(--tp-grey-1);
+}
+.grey-bg-2 {
+	background-color: var(--tp-grey-2);
+}
+.grey-bg-4 {
+	background-color: var(--tp-grey-4);
+}
+.grey-bg-7 {
+	background-color: var(--tp-grey-7);
+}
+.grey-bg-8 {
+	background-color: var(--tp-grey-8);
+}
+.grey-bg-10 {
+	background-color: var(--tp-grey-10);
+}
+.grey-bg-12 {
+	background-color: var(--tp-grey-12);
+}
+.grey-bg-13 {
+	background-color: var(--tp-grey-13);
+}
+.grey-bg-14 {
+	background-color: var(--tp-grey-14);
+}
+.grey-bg-15 {
+	background-color: var(--tp-grey-15);
+}
+.grey-bg-17 {
+	background-color: var(--tp-grey-17);
+}
+.grey-bg-18 {
+	background-color: var(--tp-grey-18);
+}
+
+.white-bg {
+	background-color: var(--tp-common-white);
+}
+
+.black-bg {
+	background-color: var(--tp-common-black);
+}
+
+.black-bg-5 {
+	background-color: var(--tp-common-black-5);
+}
+
+.black-bg-12 {
+	background-color: var(--tp-common-black-12);
+}
+
+.black-bg-13 {
+	background-color: var(--tp-common-black-13);
+}
+
+.black-bg-14 {
+	background-color: var(--tp-common-black-14);
+}
+
+.black-bg-17 {
+	background-color: var(--tp-common-black-17);
+}
+
+.black-bg-18 {
+	background-color: var(--tp-common-black-18);
+}
+
+.blue-bg {
+	background-color: var(--tp-common-blue);
+}
+
+.blue-bg-5 {
+	background-color: var(--tp-common-blue-5);
+}
+
+.purple-bg {
+	background-color: var(--tp-common-purple);
+}
+
+.theme-bg-6 {
+	background-color: var(--tp-theme-6);
+}
+
+.green-light-bg-2 {
+	background-color: var(--tp-common-green-light-2);
+}
+
+.green-light-bg-4 {
+	background-color: var(--tp-common-green-light-4);
+}
+
+.green-bg-6 {
+	background-color: var(--tp-common-green-6);
+}
+
+.khaki-bg {
+	background-color: var(--tp-common-khaki);
+}
+
+.khaki-bg-2 {
+	background-color: var(--tp-common-khaki-2);
+}
+
+.gradient-bg-dark {
+	background: radial-gradient(50.53% 50.53% at 50.23% 49.47%, #414D59 0%, #1D2631 100%);
+}
+
+
+/*--
+    - data bg color css
+------------------------------------------*/
+
+[data-bg-color] {
+	background-color: var(--tp-common-black);
+}
+
+[data-bg-color="theme-2"] {
+	background-color: var(--tp-theme-2);
+}
+
+[data-bg-color="theme-5"] {
+	background-color: var(--tp-theme-5);
+}
+
+[data-bg-color="black-7"] {
+	background-color: var(--tp-common-blue-dark);
+}
+
+[data-bg-color="blue-dark"] {
+	background-color: var(--tp-common-blue-dark);
+}
+
+[data-bg-color="green-dark"] {
+	background-color: var(--tp-common-green-dark);
+}
+
+[data-bg-color="green-dark-2"] {
+	background-color: var(--tp-common-green-dark-2);
+}
+
+[data-bg-color="green-light-3"] {
+	background-color: var(--tp-common-green-light-3);
+}
+
+[data-bg-color="purple-bg-3"] {
+	background-color: var(--tp-common-purple-3);
+}
+
+[data-bg-color="blue-bg-2"] {
+	background-color: var(--tp-common-blue-2);
+}
+
+
+[data-bg-color="footer-bg"] {
+	background-color: var(--tp-common-footer-bg);
+}
+
+[data-bg-color="footer-bg-white"] {
+	background-color: var(--tp-common-white);
+}
+
+[data-bg-color="footer-bg-dark"] {
+	background-color: var(--tp-common-footer-bg-dark);
+}
+
+[data-bg-color="footer-bg-black"] {
+	background-color: var(--tp-common-footer-bg-black);
+}
+
+[data-bg-color="footer-bg-black-2"] {
+	background-color: var(--tp-common-footer-bg-black-2);
+}
+
+[data-bg-color="footer-bg-black-3"] {
+	background-color: var(--tp-common-footer-bg-black-3);
+}
+
+[data-bg-color="footer-bg-black-4"] {
+	background-color: var(--tp-common-footer-bg-black-4);
+}
+
+[data-bg-color="footer-bg-green"] {
+	background-color: var(--tp-common-footer-bg-green);
+}
+
+[data-bg-color="footer-bg-green-dark"] {
+	background-color: var(--tp-common-footer-bg-green-dark);
+}
+
+[data-bg-color="footer-bg-grey"] {
+	background-color: var(--tp-common-footer-bg-grey);
+}
+
+[data-bg-color="footer-bg-grey-4"] {
+	background-color: var(--tp-common-footer-bg-grey-4);
+}
+
+[data-bg-color="footer-bg-blue"] {
+	background-color: var(--tp-common-footer-bg-blue);
+}
+
+/*--
+    - data overlay color css
+------------------------------------------*/
+
+[data-overlay="white"] {
+        background-color: var(--tp-common-white);
+}
+
+[data-overlay="black"] {
+        background-color: var(--tp-common-black);
+}
+
+[data-overlay="theme"] {
+        background-color: var(--tp-theme-1);
+}
+
+/*--
+    - data overlay css
+------------------------------------------*/
+[data-overlay] {
+    position: relative;
+    z-index: 1;
+    &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+}
+
+/*-- Overlay Color --*/
+[data-overlay="light"] {
+    &::before {
+        background-color: var(--tp-common-white);
+    }
+}
+
+[data-overlay="dark"] {
+    &::before {
+        background-color: var(--tp-common-black);
+    }
+}
+
+[data-overlay="green"] {
+    position: relative;
+    z-index: 1;
+    &::before {
+        background-color: var(--tp-theme-2);
+        z-index: -1;
+    }
+}
+
+[data-overlay="footer-bg"] {
+    &::before {
+        background-color: var(--tp-common-black);
+    }
+}
+
+/*-- Overlay Opacity --*/
+[data-overlay-opacity="1"] {
+    &::before {
+        opacity: 0.1;
+    }
+}
+[data-overlay-opacity="2"] {
+    &::before {
+        opacity: 0.2;
+    }
+}
+[data-overlay-opacity="3"] {
+    &::before {
+        opacity: 0.3;
+    }
+}
+[data-overlay-opacity="4"] {
+    &::before {
+        opacity: 0.4;
+    }
+}
+[data-overlay-opacity="5"] {
+    &::before {
+        opacity: 0.5;
+    }
+}
+[data-overlay-opacity="6"] {
+    &::before {
+        opacity: 0.6;
+    }
+}
+[data-overlay-opacity="7"] {
+    &::before {
+        opacity: 0.7;
+    }
+}
+[data-overlay-opacity="8"] {
+    &::before {
+        opacity: 0.8;
+    }
+}
+[data-overlay-opacity="9"] {
+    &::before {
+        opacity: 0.9;
+    }
+}

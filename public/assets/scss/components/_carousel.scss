@@ -1,0 +1,142 @@
+@use '../utils' as *;
+
+
+/* tp range slider css */
+.tp-range-slider{
+
+    & .inside-slider{
+        padding-left: 7px;
+        padding-right: 17px;
+    }
+    & .noUi-target{
+        background-color: #191C3C;
+        @include border-radius(12px);
+        border: 0;
+        box-shadow: none;
+    }
+
+    & .noUi-connect{
+        background-color: var(--tp-theme-1);
+    }
+
+    & .noUi-horizontal{
+        height: 6px;
+    }
+    & .noUi-handle{
+        height: 24px;
+        width: 24px;
+        background-color: var(--tp-theme-1);
+        @include border-radius(50%);
+        border: 4px solid var(--tp-common-white);
+        box-shadow: 0px 4px 10px rgba(5, 9, 43, 0.3);
+        top: -9px;
+
+        &:hover{
+            cursor: pointer;
+        }
+        &::before,
+        &::after{
+            display: none;
+        }
+    }
+
+    &-dark{
+        
+
+        & .noUi-handle{
+            border: 4px solid #2D314B;
+        }
+    }
+}
+
+
+/* tp swiper slider dot */
+
+.tp-swiper-dot{
+    .swiper-pagination-bullet{
+        width: 8px;
+        height: 8px;
+        background-color: var(--tp-grey-5);
+        opacity: 1;
+        margin: 0 9px !important;
+        position: relative;
+        @extend %tp-transition;
+        &::after{
+            position: absolute;
+            content: '';
+            left: 50%;
+            top: 50%;
+            width: calc(100% + 16px);
+            height: calc(100% + 16px);
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            @extend %tp-transition;
+        }
+        & button{
+            font-size: 0;
+        }
+        
+        &.swiper-pagination-bullet-active{
+            background-color: var(--tp-theme-1);
+
+            &::after{
+                border-color: var(--tp-theme-1);
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    }
+}
+
+.tp-swiper-dot-2{
+    
+    .swiper-pagination-bullet{
+        background-color:  rgba(255, 255, 255, 0.3);
+        width: 8px;
+        height: 8px;
+        margin: 0 7px;
+        @extend %tp-transition;
+        font-size: 0;
+        &::after{
+            display: none;
+        }
+      
+        &.swiper-pagination-bullet-active{
+            width: 30px;
+            border-radius: 50px;
+            background-color: var(--tp-theme-8);
+
+            
+        }
+    }
+}
+
+.tp-swiper-fraction{
+    & span{
+        font-family: var(--tp-ff-body);
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 1;
+        color: var(--tp-common-white);
+    }
+
+    &-divide{
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 23px;
+
+        
+        &::after{
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 0;
+            @include transform(translateY(-50%));
+            width: 40px;
+            height: 1px;
+            background-color: var(--tp-common-white);
+        }
+    }
+}

@@ -1,0 +1,263 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  31. BIOGRAPHY CSS START
+/*----------------------------------------*/
+
+.biography{
+    $self : &;
+    &__height{
+        height: 800px;
+    }
+    &__bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include background();
+        z-index: -1;
+
+        @include rtl{
+            left: auto;
+            right: 0;
+        }
+        
+        &::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #03041C, $alpha: .6);
+
+            @include rtl{
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+    &__title{
+        font-size: 60px;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        color: var(--tp-common-white);
+        margin-bottom: 20px;
+        animation-delay: .4s;
+        animation-duration: 1s;
+
+        @media #{$sm}{
+            font-size: 45px;
+        }
+        @media #{$xs}{
+            font-size: 35px;
+        }
+    }
+    &__content{
+        padding-top: 130px;
+        & p{
+            font-family: var(--tp-ff-space);
+            font-size: 18px;
+            line-height: 1.44;
+            letter-spacing: -0.04em;
+            color: rgba($color: #fff, $alpha: .8);
+            margin-bottom: 40px;
+            padding-right: 140px;
+            animation-delay: .6s;
+            animation-duration: 1s;
+
+            @include rtl{
+                padding-right: 0;
+                padding-left: 140px;
+            }
+
+            @media #{$sm}{
+                padding-right: 40px;
+                @include rtl{
+                    padding-right: 0;
+                    padding-left: 40px;
+                }
+            }
+            @media #{$xs}{
+                padding-right: 0;
+                @include rtl{
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    &__meta{
+        margin-bottom: 12px;
+        animation-delay: .2s;
+        animation-duration: 1s;
+        & span{
+            font-family: var(--tp-ff-space);
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.25;
+            color: var(--tp-common-white);
+        }
+    }
+    &__year{
+        position: relative;
+        padding: 0 30px;
+        padding-top: 10px;
+       
+        &:hover{
+            cursor: pointer;
+        }
+        & p{
+            font-family: var(--tp-ff-space);
+            font-size: 26px;
+            text-align: center;
+            color: var(--tp-common-white);
+            display: inline-block;
+            background-color: transparent;
+            padding: 21px 31px 11px;
+            position: relative;
+            @extend %tp-transition;
+            z-index: 1;
+
+            &::after{
+                position: absolute;
+                content: '';
+                top: -10px;
+                left: 47%;
+                width: 6px;
+                height: 6px;
+                background-color: white;
+                border-radius: 50%;
+                @extend %tp-transition;
+
+                @include rtl{
+                    left: auto;
+                    right: 47%;
+                }
+
+            }
+
+            & .tp-biography-bg{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                @extend %tp-transition;
+                z-index: -1;
+
+                @include rtl{
+                    left: auto;
+                    right: 0;
+                }
+
+                &.is-solid{
+                    visibility: hidden;
+                    opacity: 0;
+                }
+            }
+
+            &:hover{
+                box-shadow: 0px 4px 10px rgba(150, 21, 35, 0.3);
+                &::after{
+                    background-color: var(--tp-theme-10);
+                }
+                & .tp-biography-bg{
+                    visibility: hidden;
+                    opacity: 0;
+    
+                    &.is-solid{
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    &__slider{
+        margin-right: -350px;
+        margin-top: -198px;
+
+        @include rtl{
+            margin-right: 0;
+            margin-left: -350px;
+        }
+
+
+        @media #{$lg, $md, $sm, $xs}{
+            margin-right: 0;
+            @include rtl{
+                margin-left: 0;
+            }
+
+        }
+
+        &-content-active{
+            & .slick-active{
+                & #{$self}{
+                    &__title,
+                    &__content p,
+                    &__meta,
+                    &__btn{
+                        animation-name: fadeInUp;
+                        animation-fill-mode: both;
+                    }
+                }
+            }
+        }
+        &-nav{
+            position: relative;
+
+            &::after{
+                position: absolute;
+                content: '';
+                top: 3px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: rgba($color: #fff, $alpha: .3);
+
+                @include rtl{
+                    left: auto;
+                    right: 0;
+                }
+
+            }
+
+            & .slick-active.slick-current{
+                #{$self}{
+                    &__year{
+                        
+            
+                        & p{
+                            &::after{
+                                background-color: var(--tp-theme-10);
+                            }
+                            & .tp-biography-bg{
+                                visibility: hidden;
+                                opacity: 0;
+                
+                                &.is-solid{
+                                    visibility: visible;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__btn{
+        animation-delay: .8s;
+        animation-duration: 1s;
+        & a{
+            font-size: 16px;
+            color: var(--tp-common-white);
+            border-color: rgba($color: #fff, $alpha: .2);
+            padding: 9px 27px 11px;
+        }
+    }
+}
+
+

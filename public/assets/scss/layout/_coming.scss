@@ -1,0 +1,252 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  37. COMING CSS START
+/*----------------------------------------*/
+
+.coming{
+    &__height{
+        min-height: 950px;
+
+        @media #{$lg}{
+            min-height: 750px;
+        }
+    }
+    &__thumb{
+        @media #{$md, $sm, $xs}{
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+        & img{
+            @media #{$xxl, $xl, $lg, $sm, $xs}{
+                width: 100%;
+            }
+        }
+    }
+    &__countdown{
+        margin-bottom: 17px;
+        & ul{
+            & li{
+                display: inline-block;
+                font-family: var(--tp-ff-space);
+                font-weight: 500;
+                font-size: 14px;
+                letter-spacing: -0.02em;
+                color: var(--tp-text-1);
+                line-height: 1;
+                margin-right: 43px;
+                position: relative;
+
+                @include rtl{
+                    margin-right: 0;
+                    margin-left: 43px;
+                }
+
+                @media #{$xs}{
+                    margin-right: 30px;
+
+                    @include rtl{
+                        margin-right: 0;
+                        margin-left: 30px;
+                    }
+                }
+
+                &:last-child{
+                    margin-right: 0;
+
+                    @include rtl{
+                        margin-left: 0;
+                    }
+                }
+
+                &:not(:last-child){
+                    &::after,
+                    &::before{
+                        position: absolute;
+                        content: '';
+                        right: -24px;
+                        top: 14px;
+                        width: 3px;
+                        height: 3px;
+                        background-color: #BCC2C6;
+                        border-radius: 50%;
+
+                        @include rtl{
+                            right: auto;
+                            left: -24px;
+                        }
+
+                        @media #{$xs}{
+                            right: -15px;
+
+                            @include rtl{
+                                right: auto;
+                                left: -15px;
+                            }
+                        }
+                    }
+                    &::after{
+                        bottom: 14px;
+                        top: auto;
+                    }
+
+                    
+                }
+                & span{
+                    font-family: var(--tp-ff-space);
+                    font-weight: 500;
+                    font-size: 24px;
+                    color: var(--tp-common-black);
+                    display: block;
+                    margin-bottom: 5px;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+    &__title{
+        font-size: 70px;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        margin-bottom: 16px;
+
+        @media #{$lg}{
+            font-size: 50px;
+        }
+
+        @media #{$sm}{
+            font-size: 58px;
+        }
+
+        @media #{$xs}{
+            font-size: 33px;
+        }
+    }
+    &__content{
+        @media #{$md, $sm, $xs}{
+            padding-top: 150px;
+        }
+        & p{
+            font-size: 18px;
+            line-height: 1.56;
+            margin-bottom: 42px;
+            padding-right: 135px;
+
+            @include rtl{
+                padding-right: 0;
+                padding-left: 135px;
+            }
+            @media #{$lg, $md, $sm, $xs}{
+                padding-right: 0;
+
+                @include rtl{
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    &__input{
+        position: relative;
+        margin-right: 120px;
+        margin-bottom: 50px;
+
+        @include rtl{
+            margin-right: 0;
+            margin-left: 120px;
+        }
+
+        @media #{$lg, $sm}{
+            margin-right: 20px;
+            @include rtl{
+                margin-right: 0;
+                margin-left: 20px;
+            }
+        }
+
+        @media #{$xs}{
+            margin-right: 0;
+            @include rtl{
+                margin-left: 0;
+            }
+        }
+
+        & input{
+            width: 100%;
+            height: 60px;
+            background: var(--tp-common-white);
+            border: 1.5px solid #EAEAEF;
+            padding-right: 160px;
+
+            @include rtl{
+                padding-right: 25px;
+                padding-left: 160px;
+            }
+
+            &:focus{
+                border-color: var(--tp-theme-1);
+            }
+        }
+
+        & button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 17px 38px;
+
+            @include rtl{
+                right: auto;
+                left: 0;
+            }
+
+            @media #{$xs}{
+                position: relative;
+                margin-top: 15px;
+            }
+
+            &:hover{
+                background-color: var(--tp-common-black);
+            }
+        }
+    }
+    &__social{
+        & a{
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 38px;
+            background: var(--tp-common-white);
+            border: 1px solid #EAEAEF;
+            backdrop-filter: blur(30px);
+            border-radius: 25px;
+            text-align: center;
+            margin-right: 3px;
+
+            @include rtl{
+                margin-right: 0;
+                margin-left: 3px;
+            }
+
+            &:hover{
+                background-color: var(--tp-theme-1);
+                border-color: transparent;
+                color: var(--tp-common-white);
+            }
+        }
+    }
+    &__shape{
+        &-1{
+            position: absolute;
+            left: 0;
+            top: 32%;
+            z-index: -1;
+            -moz-animation: tptranslateY2 3s ease-in-out 1s forwards infinite alternate;
+            -webkit-animation: tptranslateY2 3s ease-in-out 1s forwards infinite alternate;
+            animation: tptranslateY2 3s ease-in-out 1s forwards infinite alternate;
+
+            @include rtl{
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+}

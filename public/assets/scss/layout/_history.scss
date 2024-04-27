@@ -1,0 +1,271 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  24. HISTORY CSS START
+/*----------------------------------------*/
+
+.history{
+    $self: &;
+    &__thumb{
+        position: relative;
+        z-index: -2;
+        & img{
+            @media #{$xs}{
+                width: 100%;
+            }
+        }
+
+        &-wrapper{
+
+            @include rtl{
+                padding-right: 0;
+                padding-left: 70px;
+            }
+            @media #{$xs}{
+                padding-right: 0;
+
+                @include rtl{
+                    padding-left: 0;
+                }
+            }
+        }
+        &-right{
+            &-wrapper{
+                margin-left: -100px;
+                position: relative;
+
+                @include rtl{
+                    margin-left: 0;
+                    margin-right: -100px;
+                }
+
+                @media #{$xs}{
+                    margin-left: 65px;
+
+                    @include rtl{
+                        margin-left: 0;
+                        margin-right: 65px;
+                    }
+                }
+                & .history-thumb-text{
+                    position: absolute;
+                    bottom: 5%;
+                    left: 36px;
+                    z-index: 1;   
+                    @include rtl{
+                        left: auto;
+                        right: 36px;
+                    } 
+                    & p{
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #fff;
+                        opacity: .8;
+                        font-family: var(--tp-ff-inter);
+                    }
+                }
+            }
+
+            position: relative;
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 40px;
+            color: var(--tp-common-white);
+            font-family: var(--tp-ff-space);
+            padding: 255px 86px 75px 28px;
+            margin-top: 100px;
+            text-align: center;
+            color: #fff;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            width: 230px;
+            height: 370px;
+
+            @include rtl{
+                padding-left: 86px;
+                padding-right: 28px;
+            }
+
+            @media #{$xs}{
+                margin-top: -70px;
+                height: 270px;
+                padding-top: 155px;
+            }
+            
+            &::after,
+            &::before{
+               position: absolute;
+               content: '';
+            }
+
+            &::before{
+                z-index: -2;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-image: inherit;
+            }
+
+            &::after{
+                position: absolute;
+                z-index: -1;
+                content: '';
+                left: 10px;
+                top: 10px;
+                right: 10px;
+                bottom: 10px;
+                background-color: rgba($color: #365DC0, $alpha: .9);
+                backdrop-filter: blur(14px);
+            }
+        }
+    }
+    &__year{
+        flex: 0 0 auto;
+        &-title{
+            font-size: 14px;
+            font-family: var(--tp-ff-inter);
+            font-weight: 500;
+            color: var(--tp-text-1);
+            margin-bottom: 0;
+            margin-top: 5px;
+            margin-right: 24px;
+            padding-right: 30px;
+            position: relative;
+
+            @include rtl{
+                margin-right: 0;
+                padding-left: 0;
+                margin-left: 24px;
+                padding-left: 30px;
+            }
+        }
+    }
+    &__list{
+        $self2: &;
+
+        @media #{$lg}{
+            padding-right: 0;
+
+            @include rtl{
+                padding-left: 0;
+            }
+        }
+
+        @media #{$md, $sm, $xs}{
+            padding-right: 0;
+            padding-left: 0;
+            margin-top: 50px;
+        }
+        &-item{
+            margin-bottom: 50px;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+
+            &:last-child{
+                #{$self2}{
+                    &-content{
+                        &::after{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        &-content{
+            position: relative;
+            &::after{
+                position: absolute;
+                content: '';
+                left: -30px;
+                top: 37px;
+                width: 1px;
+                height: 100%;
+                background-color: #EAEAEF;
+
+                @include rtl{
+                    left: auto;
+                    right: -30px;
+                }
+            }
+            & > p{
+                font-family: var(--tp-ff-inter);
+                font-size: 15px;
+                line-height: 20px;
+                margin-bottom: 20px;
+            }
+        }
+        &-dot{
+            position: absolute;
+            top: 4px;
+            left: -25px;
+
+            @include rtl{
+                left: auto;
+                right: -25px;
+            }
+            & span{
+                display: inline-block;
+                position: absolute;
+                content: '';
+                right: 0;
+                top: 4px;
+                width: 10px;
+                height: 10px;
+                background: linear-gradient(180deg, #0CCEBA 0%, #017266 100%);
+                box-shadow: 0px 1px 2px rgba(14, 53, 49, 0.2);
+                border-radius: 50%;
+
+                @include rtl{
+                    right: auto;
+                    left: 0;
+                }
+
+                &::before{
+                    position: absolute;
+                    content: '';
+                    right: -7px;
+                    top: -7px;
+                    width: 24px;
+                    height: 24px;
+                    background: #15A5961A;
+                    border-radius: 50%;
+                    -webkit-animation: pulse-2 1.75s cubic-bezier(.4,0,.2,1) infinite;
+                    animation: pulse-2 1.75s cubic-bezier(.4,0,.2,1) infinite;
+
+                    @include rtl{
+                        right: auto;
+                        left: -7px;
+                    }
+                }
+            }
+        }
+        &-title{
+            font-family: var(--tp-ff-space);
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: -0.04em;
+            margin-bottom: 8px;
+        }
+        &-meta{
+            & span{
+                display: inline-block;
+                padding: 0 13px;
+                font-size: 14px;
+                font-weight: 500;
+                font-family: var(--tp-ff-space);
+                color: var(--tp-text-1);
+                background-color: var(--tp-grey-9);
+                border-radius: 20px;
+                @extend %tp-transition;
+
+                &:hover{
+                    background-color: var(--tp-theme-4);
+                    color: var(--tp-common-white);
+                }
+            }
+        }
+    }
+}

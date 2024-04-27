@@ -1,0 +1,202 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  30. VISION CSS START
+/*----------------------------------------*/
+
+.vision{
+    $self: &;
+    &__tab{
+        & .nav-tabs{
+            & .nav-item{
+                margin-bottom: 12px;
+
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                & .nav-link{
+                    font-family: var(--tp-ff-space);
+                    font-weight: 500;
+                    font-size: 17px;
+                    color: var(--tp-text-1);
+                    padding: 24px 36px;
+                    width: 100%;
+                    text-align: left;
+                    background: #FFFFFF;
+                    box-shadow: 0px 1px 3px rgba(3, 4, 28, 0.1);
+                    border-radius: 10px;
+                    position: relative;
+                    z-index: 1;
+                    overflow: hidden;
+
+                    @include rtl{
+                        text-align: right;
+                    }
+
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        @include tp-gradient((180deg, #FF3939 0.01%, #BF2132 100%));
+                        opacity: 0;
+                        visibility: hidden;
+                        z-index: -1;
+                        @extend %tp-transition;
+                    }
+                    & span{
+                        color: #5253CE;
+                        margin-right: 20px;
+                        display: inline-block;
+                        width: 26px;
+                        text-align: right;
+                        @extend %tp-transition;
+
+                        @include rtl{
+                            text-align: left;
+                            margin-right: 0;
+                            margin-left: 20px;
+                        }
+
+                        & svg{
+                            @include transform(translateY(-3px));
+                        }
+                    }
+
+                    &:hover,
+                    &.active{
+                        box-shadow: 0px 4px 10px rgba(150, 21, 35, 0.3);
+                        color: var(--tp-common-white);
+
+                        & span{
+                            color: var(--tp-common-white);
+                        }
+                        &::after{
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+        &-content{
+            @media #{$xl}{
+                padding-left: 30px;
+                @include rtl{
+                    padding-left: 0;
+                    padding-right: 30px;
+                }
+            }
+            @media #{$lg}{
+                padding-left: 30px;
+                @include rtl{
+                    padding-left: 0;
+                    padding-right: 30px;
+                }
+            }
+            @media #{$md}{
+                padding-left: 0;
+                @include rtl{
+                    padding-right: 0;
+                }
+            }
+            @media #{$sm, $xs}{
+                padding-left: 0;
+                margin-top: 30px;
+                @include rtl{
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    &__thumb{
+        & img{
+            background: #FFFFFF;
+            border: 10px solid var(--tp-common-white);
+            box-shadow: 0px 1px 3px rgba(3, 4, 28, 0.1);
+            border-radius: 20px;
+        }
+    }
+    &__content{
+        & p{
+            font-family: var(--tp-ff-space);
+            font-size: 20px;
+            line-height: 1.5;
+            color: var(--tp-common-black);
+            margin-bottom: 25px;
+        }
+    }
+    &__list{
+        & ul{
+            & li{
+                font-family: var(--tp-ff-space);
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 2.12;
+                color: var(--tp-text-1);
+                list-style: none;
+                & span{
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                    border-radius: 50%;
+                    @include tp-gradient((142.96deg, #28D58A 14.78%, #2CAE76 95.99%));
+                    box-shadow: 0px 1px 2px rgba(6, 138, 75, 0.3);
+                    color: var(--tp-common-white);
+                    margin-right: 8px;
+
+                    @include rtl{
+                        margin-right: 0;
+                        margin-left: 8px;
+                    }
+
+                    & svg{
+                        @include transform(translateY(-1px));
+                    }
+                }
+            }
+        }
+    }
+    &__style-2{
+
+        #{$self}{
+            &__tab .nav-tabs .nav-item{
+                & .nav-link{
+                    color: var(--tp-text-1);
+                    border-radius: 0;
+                    box-shadow: 0px 1px 3px rgba(3, 4, 28, 0.1);
+
+                    & span{
+                        color: var(--tp-text-1);
+                    }
+
+                    &::after{
+                        display: none;
+                    }
+
+                    &:hover,
+                    &.active{
+                        color: var(--tp-common-white);
+                        background-color: var(--tp-theme-1);
+                        box-shadow: 0;
+                        & span{
+                            color: var(--tp-common-white);
+                        }
+                    }
+                }
+            }
+            &__thumb{
+                & img{
+                    border-radius: 0;
+                    box-shadow: 0px 1px 3px rgba(3, 4, 28, 0.1);
+                }
+            }
+
+            
+        }
+    }
+}

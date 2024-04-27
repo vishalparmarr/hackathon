@@ -1,0 +1,11 @@
+@use './mixins' as *;
+
+%include-bg{
+	@include background();
+}
+
+%tp-transition{
+	@include transition(.3s);
+}
+
+

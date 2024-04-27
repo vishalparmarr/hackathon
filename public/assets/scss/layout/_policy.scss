@@ -1,0 +1,135 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  38. POLICY CSS START
+/*----------------------------------------*/
+
+.policy{
+    &__translate{
+        margin-top: -200px;
+    }
+    &__meta{
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+    }
+    &__wrapper{
+        padding: 70px 60px 63px;
+        padding-right: 70px;
+        background: var(--tp-common-white);
+        box-shadow: 0px 30px 40px rgba(3, 4, 28, 0.1);
+
+        @include rtl{
+            padding-right: 60px;
+            padding-left: 70px;
+        }
+
+        @media #{$sm}{
+            padding: 50px 40px;
+        }
+
+        @media #{$xs}{
+            padding: 30px 35px;
+        }
+        & p{
+            font-size: 16px;
+            line-height: 1.62;
+            margin-bottom: 11px;
+        }
+    }
+    &__title{
+        font-size: 34px;
+        letter-spacing: -0.04em;
+        color: var(--tp-common-black-solid);
+        margin-bottom: 17px;
+
+        @media #{$xs}{
+            font-size: 25px;
+         }
+
+        &-2{
+            margin-bottom: 3px;
+        }
+
+    }
+    &__item{
+        &-2{
+            & p{
+                margin-bottom: 25px;
+            }
+        }
+    }
+    &__list{
+        & ul{
+            & li{
+                font-size: 16px;
+                position: relative;
+                padding-left: 15px;
+                list-style: none;
+
+                @include rtl{
+                    padding-left: 0;
+                    padding-right: 17px;
+                }
+
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+                &::after{
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    top: 11px;
+                    width: 5px;
+                    height: 5px;
+                    background-color: var(--tp-text-1);
+                    border-radius: 50%;
+
+                    @include rtl{
+                        left: auto;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    &__contact{
+        & ul{
+            margin-bottom: 15px;
+            & li{
+                list-style: none;
+                font-size: 16px;
+                color: var(--tp-common-black);
+                
+                &:not(:last-child){
+                    margin-bottom: 4px;
+                }
+
+                & span{
+                    & a{
+                        &:hover{
+                            color: var(--tp-theme-1);
+                        }
+                    }
+                }
+            }
+        }
+
+        & > p{
+            margin-bottom: 14px;
+        }
+    }
+    &__address{
+        & p{
+            font-size: 16px;
+            line-height: 1.5;
+
+            & a{
+                &:hover{
+                    color: var(--tp-theme-1);
+                }
+            }
+        }
+    }
+}

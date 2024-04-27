@@ -1,0 +1,56 @@
+
+// font url
+
+$font-url: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap';
+
+// font family
+$font-family: (
+    ff: (
+        'body': "'Inter', sans-serif", // body font
+        'heading': "'Space Grotesk', sans-serif", // heading font
+        'p': "'Inter', sans-serif", //  p tag font
+        'inter': "'Inter', sans-serif", //  p tag font
+        'roboto': "'Roboto', sans-serif ", // roboto
+        'oswald': "'Oswald', sans-serif", // oswald
+        'poppins': "'Poppins', sans-serif", // poppins
+        'space': "'Space Grotesk', sans-serif", // space
+        'play': "'Playfair Display', serif;", // playfair
+        'syne': "'Syne', sans-serif;", // syne
+        'rajdhani': "'Rajdhani', sans-serif;", // syne
+        'fontawesome': '"Font Awesome 6 Pro"', // fontawesome
+    )
+);
+
+// font weight
+$font-scale: (
+    fw: (
+        'normal': normal,
+        'elight': 200,
+        'light': 300,
+        'regular': 400,
+        'medium': 500,
+        'sbold': 600,
+        'bold': 700,
+        'ebold': 800,
+        'black': 900,
+    )
+);
+
+
+
+// font size
+$font-size: (
+    
+    fz: (
+        body: 14px,
+        p: 14px,
+        h1: 40px,
+        h2: 36px,
+        h3: 24px,
+        h4: 20px,
+        h5: 16px,
+        h6: 14px,
+    )
+);
+
+
